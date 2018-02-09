@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="input-group">
+      <span class="input-group-btn col-md-8">
+        <button type="button" class="btn btn-sm btn-primary btn-space" (click)="uploadDataSample()"><i class="fa fa-upload"></i> Upload a data sample</button>
+      </span>
+      <mat-checkbox class="example-margin" [(ngModel)]="automaticUpdates" [disabled]="!dataLoaded" (ngModelChange)="automaticUpdatesChanged($event)">Automatic updates</mat-checkbox>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="row">
+    <div *ngFor="let item of model.Success"class="alert alert-success">
+      {{item}}
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of model.Errors" class="alert alert-danger">
+      {{item}}
+    </div>
+  </div>
+  <div [hidden]="!dataLoaded" class="row">
+  <google-chart [data]="columnChartData"></google-chart>
+</div>
+</div>

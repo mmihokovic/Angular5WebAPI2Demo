@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://localhost:65383/",
+    "secure": false
+  },
+  "/Token": {
+    "target": "http://localhost:65383/",
+    "secure": false
+  }
+}

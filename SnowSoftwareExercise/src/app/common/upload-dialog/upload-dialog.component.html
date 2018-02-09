@@ -1,0 +1,17 @@
+<h4 mat-dialog-title>{{title}}</h4>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="text-center">
+      <label class="custom-file">
+        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp" (change)="onFileChange($event)" #fileInput accept="{{acceptedFileTypes}}">
+        <span class="custom-file-control form-control-file"></span>
+      </label>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <div class="btn-toolbar">
+    <button type="button" class="btn btn-danger" (click)="yesClick()">Upload file</button>
+    <button type="button" class="btn btn-default " (click)="noClick()" mat-dialog-close tabindex="0">Cancel</button>
+  </div>
+</mat-dialog-actions>
